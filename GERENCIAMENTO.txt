@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Banca (Risco Din‚mico)</title>
-    <!-- Carregamento do Tailwind CSS para estilizaÁ„o -->
+    <title>Gerenciador de Banca (Risco Din√¢mico)</title>
+    <!-- Carregamento do Tailwind CSS para estiliza√ß√£o -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carregamento do Chart.js para o Gr·fico -->
+    <!-- Carregamento do Chart.js para o Gr√°fico -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #10b981; /* Emerald 500 (vitÛria) */
+            --color-primary: #10b981; /* Emerald 500 (vit√≥ria) */
             --color-secondary: #f43f5e; /* Rose 500 (derrota) */
         }
         body {
@@ -77,16 +77,16 @@
 
     <div id="app" class="max-w-6xl mx-auto space-y-8">
         <header class="text-center p-6 card">
-            <h1 class="text-3xl font-extrabold text-gray-800">?? Gerenciamento Financeiro (Customiz·vel)</h1>
-            <p class="text-gray-500 mt-1">Seu risco e retorno s„o calculados pela Banca Atual e podem ser configurados abaixo.</p>
+            <h1 class="text-3xl font-extrabold text-gray-800">?? Gerenciamento Financeiro (Customiz√°vel)</h1>
+            <p class="text-gray-500 mt-1">Seu risco e retorno s√£o calculados pela Banca Atual e podem ser configurados abaixo.</p>
         </header>
 
-        <!-- SeÁ„o de ConfiguraÁıes de Risco -->
+        <!-- Se√ß√£o de Configura√ß√µes de Risco -->
         <div class="p-6 card border-l-4 border-indigo-500">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? ConfiguraÁıes de Risco</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? Configura√ß√µes de Risco</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="riskPercentageInput" class="block text-sm font-medium text-gray-700">Risco M·ximo da Banca (%)</label>
+                    <label for="riskPercentageInput" class="block text-sm font-medium text-gray-700">Risco M√°ximo da Banca (%)</label>
                     <div class="relative mt-1 rounded-md shadow-sm">
                         <input type="number" id="riskPercentageInput" min="0.1" step="0.1"
                                 class="block w-full rounded-md border-gray-300 pr-10 focus:border-indigo-500 focus:ring-indigo-500"
@@ -95,10 +95,10 @@
                             <span class="text-gray-500">%</span>
                         </div>
                     </div>
-                    <p class="mt-1 text-xs text-gray-500">Limite m·ximo de perda por ciclo de risco (ex: 5 para 5%).</p>
+                    <p class="mt-1 text-xs text-gray-500">Limite m√°ximo de perda por ciclo de risco (ex: 5 para 5%).</p>
                 </div>
                 <div>
-                    <label for="returnPercentageInput" class="block text-sm font-medium text-gray-700">Retorno da OperaÁ„o (Pay-out %)</label>
+                    <label for="returnPercentageInput" class="block text-sm font-medium text-gray-700">Retorno da Opera√ß√£o (Pay-out %)</label>
                     <div class="relative mt-1 rounded-md shadow-sm">
                         <input type="number" id="returnPercentageInput" min="0.1" step="0.1"
                                 class="block w-full rounded-md border-gray-300 pr-10 focus:border-indigo-500 focus:ring-indigo-500"
@@ -112,7 +112,7 @@
             </div>
         </div>
 
-        <!-- SeÁ„o de Dados Chave e Regra de Risco / 3 -->
+        <!-- Se√ß√£o de Dados Chave e Regra de Risco / 3 -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- 1. Banca Inicial (Input) -->
             <div class="p-5 card border-l-4 border-gray-400">
@@ -128,24 +128,24 @@
                 <p id="currentBankrollDisplay" class="mt-1 text-2xl font-bold text-green-600">R$ 0,00</p>
             </div>
 
-            <!-- 3. Risco M·ximo Total (Calculado DIN¬MICO) -->
+            <!-- 3. Risco M√°ximo Total (Calculado DIN√ÇMICO) -->
             <div class="p-5 card border-l-4 border-red-500">
-                <p class="text-sm font-medium text-gray-500">Risco M·ximo Total (<span id="riskPercentLabel">5%</span> da Atual)</p>
+                <p class="text-sm font-medium text-gray-500">Risco M√°ximo Total (<span id="riskPercentLabel">5%</span> da Atual)</p>
                 <p id="maxRiskTotalDisplay" class="mt-1 text-2xl font-bold text-red-600">R$ 0,00</p>
             </div>
 
-            <!-- 4. Valor da Unidade (Calculado Risco / 3 DIN¬MICO) -->
+            <!-- 4. Valor da Unidade (Calculado Risco / 3 DIN√ÇMICO) -->
             <div class="p-5 card border-l-4 border-orange-500">
                 <p class="text-sm font-medium text-gray-500">Valor da Unidade (Risco / 3)</p>
                 <p id="unitStakeDisplay" class="mt-1 text-2xl font-bold text-orange-600">R$ 0,00</p>
             </div>
         </div>
 
-        <!-- MÈtricas de Desempenho -->
+        <!-- M√©tricas de Desempenho -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <!-- 5. Total de VitÛrias -->
+            <!-- 5. Total de Vit√≥rias -->
             <div class="p-5 card border-l-4 border-green-700 text-center">
-                <p class="text-sm font-medium text-gray-500">VitÛrias (W)</p>
+                <p class="text-sm font-medium text-gray-500">Vit√≥rias (W)</p>
                 <p id="winCountDisplay" class="mt-1 text-3xl font-bold text-green-700">0</p>
             </div>
              <!-- 6. Total de Derrotas -->
@@ -160,24 +160,24 @@
             </div>
         </div>
 
-        <!-- Gr·fico de Crescimento da Banca -->
+        <!-- Gr√°fico de Crescimento da Banca -->
         <div class="p-6 card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? EvoluÁ„o da Banca</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? Evolu√ß√£o da Banca</h2>
             <div id="bankrollChartContainer">
                 <canvas id="bankrollChart"></canvas>
             </div>
         </div>
         
-        <!-- SeÁ„o de Registro R·pido (VitÛria/Derrota) -->
+        <!-- Se√ß√£o de Registro R√°pido (Vit√≥ria/Derrota) -->
         <div class="p-6 card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">? Registro R·pido (Valores Din‚micos)</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">? Registro R√°pido (Valores Din√¢micos)</h2>
             <p class="text-sm text-gray-600 mb-4">
-                As transaÁıes usam o **Valor da Unidade** e a taxa de retorno de <span id="returnPercentLabel" class="font-bold text-green-600">87%</span>.
+                As transa√ß√µes usam o **Valor da Unidade** e a taxa de retorno de <span id="returnPercentLabel" class="font-bold text-green-600">87%</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <button onclick="registerAutoTransaction(true)" 
                         class="btn-win text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg w-full">
-                    ? Registrar VitÛria
+                    ? Registrar Vit√≥ria
                 </button>
                 <button onclick="registerAutoTransaction(false)" 
                         class="btn-loss text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg w-full">
@@ -186,39 +186,39 @@
             </div>
         </div>
 
-        <!-- Tabela de HistÛrico de TransaÁıes -->
+        <!-- Tabela de Hist√≥rico de Transa√ß√µes -->
         <div class="p-6 card overflow-x-auto">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? HistÛrico de TransaÁıes</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? Hist√≥rico de Transa√ß√µes</h2>
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DescriÁ„o</th>
+                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descri√ß√£o</th>
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Investido (R$)</th>
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Resultado (R$)</th>
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Banca Atual (R$)</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AÁ„o</th>
+                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">A√ß√£o</th>
                     </tr>
                 </thead>
                 <tbody id="transactionList" class="bg-white divide-y divide-gray-200">
-                    <!-- As transaÁıes ser„o inseridas aqui pelo JavaScript -->
+                    <!-- As transa√ß√µes ser√£o inseridas aqui pelo JavaScript -->
                     <tr>
-                        <td colspan="6" class="py-4 text-center text-gray-500">Nenhuma transaÁ„o registrada.</td>
+                        <td colspan="6" class="py-4 text-center text-gray-500">Nenhuma transa√ß√£o registrada.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- SeÁ„o de Adicionar TransaÁ„o Manual (Aportes/Retiradas) -->
+        <!-- Se√ß√£o de Adicionar Transa√ß√£o Manual (Aportes/Retiradas) -->
         <div class="p-6 card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? Adicionar TransaÁ„o Manual (Aportes/Outros)</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">?? Adicionar Transa√ß√£o Manual (Aportes/Outros)</h2>
             <div id="llmAnalysisOutput" class="p-3 mb-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-600 hidden">
-                <!-- Output da an·lise LLM aqui -->
+                <!-- Output da an√°lise LLM aqui -->
             </div>
             <form id="transactionForm" class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="col-span-1 md:col-span-2">
-                    <label for="description" class="block text-sm font-medium text-gray-700">DescriÁ„o</label>
-                    <input type="text" id="description" required placeholder="Ex: Novo Aporte ou OperaÁ„o Manual" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                    <label for="description" class="block text-sm font-medium text-gray-700">Descri√ß√£o</label>
+                    <input type="text" id="description" required placeholder="Ex: Novo Aporte ou Opera√ß√£o Manual" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
                 </div>
                 <div>
                     <label for="invested" class="block text-sm font-medium text-gray-700">Valor Investido (R$)</label>
@@ -232,10 +232,10 @@
                 <div class="md:col-span-4 flex flex-col sm:flex-row justify-end gap-2 mt-4">
                     <button type="button" onclick="analyzeRiskWithLLM(event)" id="analyzeButton"
                             class="bg-indigo-600 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:bg-indigo-700 hover:shadow-lg transition w-full sm:w-auto">
-                        ? An·lise de Risco LLM
+                        ? An√°lise de Risco LLM
                     </button>
                     <button type="submit" class="btn-win text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-lg w-full sm:w-auto">
-                        Registrar TransaÁ„o Manual
+                        Registrar Transa√ß√£o Manual
                     </button>
                 </div>
             </form>
@@ -244,13 +244,13 @@
 
     <!-- Firebase Imports e Scripts -->
     <script type="module">
-        // Importa as funÁıes necess·rias do Firebase SDK
+        // Importa as fun√ß√µes necess√°rias do Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, onSnapshot, updateDoc, arrayRemove, arrayUnion } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Vari·veis globais fornecidas pelo ambiente Canvas
+        // Vari√°veis globais fornecidas pelo ambiente Canvas
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
@@ -265,16 +265,16 @@
         let currentData = {
             initialBankroll: 0,
             transactions: [],
-            // NOVOS PAR¬METROS DE CONFIGURA«√O:
+            // NOVOS PAR√ÇMETROS DE CONFIGURA√á√ÉO:
             riskPercentage: 5, // Default 5%
             returnPercentage: 87 // Default 87%
         };
         let isAuthReady = false;
-        let bankrollChart; // Vari·vel para a inst‚ncia do Chart.js
+        let bankrollChart; // Vari√°vel para a inst√¢ncia do Chart.js
 
         setLogLevel('Debug');
 
-        // FunÁ„o para formatar n˙meros como moeda brasileira (R$)
+        // Fun√ß√£o para formatar n√∫meros como moeda brasileira (R$)
         const formatCurrency = (value) => {
             if (typeof value !== 'number' || isNaN(value)) return 'R$ 0,00';
             return new Intl.NumberFormat('pt-BR', {
@@ -285,19 +285,19 @@
             }).format(value);
         };
 
-        // FunÁ„o principal de inicializaÁ„o do Firebase e autenticaÁ„o
+        // Fun√ß√£o principal de inicializa√ß√£o do Firebase e autentica√ß√£o
         const initFirebase = async () => {
             if (firebaseConfig) {
                 const app = initializeApp(firebaseConfig);
                 db = getFirestore(app);
                 auth = getAuth(app);
 
-                // AutenticaÁ„o
+                // Autentica√ß√£o
                 onAuthStateChanged(auth, async (user) => {
                     if (user) {
                         userId = user.uid;
                     } else {
-                        // Se n„o houver usu·rio, tenta login com token ou anÙnimo
+                        // Se n√£o houver usu√°rio, tenta login com token ou an√¥nimo
                         try {
                             if (initialAuthToken) {
                                 await signInWithCustomToken(auth, initialAuthToken);
@@ -307,24 +307,24 @@
                             userId = auth.currentUser.uid;
                         } catch (error) {
                             console.error("Erro ao autenticar no Firebase:", error);
-                            userId = crypto.randomUUID(); // Fallback para ID tempor·rio
+                            userId = crypto.randomUUID(); // Fallback para ID tempor√°rio
                         }
                     }
 
-                    // Define a referÍncia do documento AP”S a autenticaÁ„o
+                    // Define a refer√™ncia do documento AP√ìS a autentica√ß√£o
                     trackerDocRef = doc(db, `artifacts/${appId}/users/${userId}/financial_tracker`, 'main_tracker');
                     isAuthReady = true;
                     listenForData();
-                    initChart(); // Inicializa o gr·fico
+                    initChart(); // Inicializa o gr√°fico
                 });
             } else {
-                console.error("ConfiguraÁ„o do Firebase n„o encontrada.");
+                console.error("Configura√ß√£o do Firebase n√£o encontrada.");
             }
         };
         
-        // Inicializa o Gr·fico Chart.js
+        // Inicializa o Gr√°fico Chart.js
         const initChart = () => {
-            // FIX: DestrÛi o gr·fico existente antes de criar um novo, se houver.
+            // FIX: Destr√≥i o gr√°fico existente antes de criar um novo, se houver.
             if (bankrollChart) {
                 bankrollChart.destroy();
             }
@@ -333,7 +333,7 @@
             bankrollChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['InÌcio'], // Etiqueta inicial
+                    labels: ['In√≠cio'], // Etiqueta inicial
                     datasets: [{
                         label: 'Banca Atual (R$)',
                         data: [0], // Valor inicial
@@ -384,7 +384,7 @@
             });
         };
 
-        // FunÁ„o para escutar as mudanÁas no Firestore em tempo real
+        // Fun√ß√£o para escutar as mudan√ßas no Firestore em tempo real
         const listenForData = () => {
             if (!isAuthReady) return;
 
@@ -394,31 +394,31 @@
                     currentData = {
                         initialBankroll: data.initialBankroll || 0,
                         transactions: (data.transactions || []).filter(t => t.timestamp),
-                        // Carrega as configuraÁıes, usando defaults se n„o existirem
+                        // Carrega as configura√ß√µes, usando defaults se n√£o existirem
                         riskPercentage: data.riskPercentage !== undefined ? data.riskPercentage : 5,
                         returnPercentage: data.returnPercentage !== undefined ? data.returnPercentage : 87
                     };
                 } else {
-                    // Documento n„o existe, cria-o com dados iniciais e configuraÁıes default
+                    // Documento n√£o existe, cria-o com dados iniciais e configura√ß√µes default
                     setDoc(trackerDocRef, currentData).catch(e => console.error("Erro ao criar documento inicial:", e));
                 }
                 renderUI();
-                updateChart(); // Atualiza o gr·fico apÛs renderizar a UI
+                updateChart(); // Atualiza o gr√°fico ap√≥s renderizar a UI
             }, (error) => {
                 console.error("Erro ao escutar dados:", error);
             });
         };
 
-        // Atualiza os dados no Gr·fico
+        // Atualiza os dados no Gr√°fico
         const updateChart = () => {
             if (!bankrollChart) return;
             
-            // Filtra e ordena as transaÁıes pela data mais antiga primeiro para calcular a evoluÁ„o
+            // Filtra e ordena as transa√ß√µes pela data mais antiga primeiro para calcular a evolu√ß√£o
             const transactions = currentData.transactions.slice().sort((a, b) => a.timestamp - b.timestamp);
             let currentBankroll = currentData.initialBankroll;
 
-            // 1. Prepara os dados para o gr·fico
-            const labels = ['InÌcio'];
+            // 1. Prepara os dados para o gr√°fico
+            const labels = ['In√≠cio'];
             const data = [currentBankroll];
 
             transactions.forEach((t, index) => {
@@ -434,12 +434,12 @@
         };
 
 
-        // FunÁ„o que renderiza a interface do usu·rio com os dados atuais
+        // Fun√ß√£o que renderiza a interface do usu√°rio com os dados atuais
         const renderUI = () => {
             const initialBankroll = currentData.initialBankroll;
             const transactions = currentData.transactions;
 
-            // 1. Atualizar ConfiguraÁıes (Inputs)
+            // 1. Atualizar Configura√ß√µes (Inputs)
             const riskInput = document.getElementById('riskPercentageInput');
             const returnInput = document.getElementById('returnPercentageInput');
             
@@ -456,19 +456,19 @@
                 initialInput.value = initialBankroll.toFixed(2);
             }
 
-            // 3. Calcular Banca Atual (Base para o risco din‚mico)
+            // 3. Calcular Banca Atual (Base para o risco din√¢mico)
             let currentBankroll = initialBankroll;
             transactions.forEach(t => {
                 currentBankroll += t.result;
             });
-            const bankrollForRisk = Math.max(0, currentBankroll); // Banca para o c·lculo
+            const bankrollForRisk = Math.max(0, currentBankroll); // Banca para o c√°lculo
             window.currentBankrollValue = currentBankroll; // Salva globalmente para o LLM
 
-            // 4. Calcular Risco M·ximo Total (RISCO CUSTOMIZADO da Banca ATUAL)
+            // 4. Calcular Risco M√°ximo Total (RISCO CUSTOMIZADO da Banca ATUAL)
             const riskRatio = currentData.riskPercentage / 100;
             const maxRiskTotal = bankrollForRisk * riskRatio;
 
-            // 5. Calcular Valor da Unidade (Risco M·ximo Total / 3)
+            // 5. Calcular Valor da Unidade (Risco M√°ximo Total / 3)
             const unitStake = maxRiskTotal / 3;
 
             // 6. Atualizar Labels e Displays
@@ -481,13 +481,13 @@
             document.getElementById('returnPercentLabel').textContent = `${currentData.returnPercentage}%`;
 
 
-            // 7. Calcular MÈtricas W/L (Apenas transaÁıes autom·ticas)
+            // 7. Calcular M√©tricas W/L (Apenas transa√ß√µes autom√°ticas)
             let winCount = 0;
             let lossCount = 0;
             let totalAutoTransactions = 0;
 
             transactions.forEach(t => {
-                // A descriÁ„o das transaÁıes autom·ticas contÈm "Unidade"
+                // A descri√ß√£o das transa√ß√µes autom√°ticas cont√©m "Unidade"
                 if (t.description.includes("Unidade")) {
                     totalAutoTransactions++;
                     if (t.result > 0) {
@@ -500,24 +500,24 @@
 
             const winRate = totalAutoTransactions > 0 ? (winCount / totalAutoTransactions) * 100 : 0;
 
-            // 8. Atualizar MÈtricas W/L
+            // 8. Atualizar M√©tricas W/L
             document.getElementById('winCountDisplay').textContent = winCount;
             document.getElementById('lossCountDisplay').textContent = lossCount;
             document.getElementById('winRateDisplay').textContent = `${winRate.toFixed(2)}%`;
 
-            // 9. Renderizar Tabela de TransaÁıes
+            // 9. Renderizar Tabela de Transa√ß√µes
             const transactionList = document.getElementById('transactionList');
             transactionList.innerHTML = ''; 
 
             if (transactions.length === 0) {
-                transactionList.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-gray-500">Nenhuma transaÁ„o registrada.</td></tr>';
+                transactionList.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-gray-500">Nenhuma transa√ß√£o registrada.</td></tr>';
                 return;
             }
 
             // Mapeia e inverte a ordem para mostrar o mais recente primeiro
             transactions.slice().sort((a, b) => b.timestamp - a.timestamp).forEach((t) => {
                 
-                // Recalcula o saldo da banca a cada linha (para o caso de ediÁıes)
+                // Recalcula o saldo da banca a cada linha (para o caso de edi√ß√µes)
                 const sortedTransactions = currentData.transactions.slice().sort((a, b) => a.timestamp - b.timestamp);
                 
                 const originalIndex = sortedTransactions.findIndex(st => st.timestamp === t.timestamp && st.result === t.result && st.investedAmount === t.investedAmount);
@@ -543,7 +543,7 @@
                     <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">
                         <button onclick="deleteTransaction(${t.timestamp}, ${t.result}, ${t.investedAmount})" 
                                 class="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-100 transition duration-150"
-                                title="Excluir TransaÁ„o">
+                                title="Excluir Transa√ß√£o">
                             ???
                         </button>
                     </td>
@@ -552,13 +552,13 @@
             });
         };
 
-        // --- FunÁıes de AÁ„o do Usu·rio ---
+        // --- Fun√ß√µes de A√ß√£o do Usu√°rio ---
 
-        // FunÁ„o para chamar a API Gemini e analisar a transaÁ„o manual
+        // Fun√ß√£o para chamar a API Gemini e analisar a transa√ß√£o manual
         window.analyzeRiskWithLLM = async (event) => {
             event.preventDefault();
 
-            const description = document.getElementById('description').value || 'TransaÁ„o genÈrica';
+            const description = document.getElementById('description').value || 'Transa√ß√£o gen√©rica';
             const investedAmount = parseFloat(document.getElementById('invested').value);
             const result = parseFloat(document.getElementById('result').value);
             const currentBankroll = window.currentBankrollValue;
@@ -580,24 +580,24 @@
 
             // 1. Construir o Prompt para o LLM
             const prompt = `
-                Como um analista financeiro conservador, avalie a seguinte transaÁ„o em relaÁ„o ao capital total.
+                Como um analista financeiro conservador, avalie a seguinte transa√ß√£o em rela√ß√£o ao capital total.
                 
                 - Banca Atual (Capital Total): R$ ${currentBankroll.toFixed(2)}
-                - TransaÁ„o (Investido/Risco): R$ ${investedAmount.toFixed(2)}
-                - Resultado Esperado/LanÁado: R$ ${result.toFixed(2)}
-                - DescriÁ„o: ${description}
+                - Transa√ß√£o (Investido/Risco): R$ ${investedAmount.toFixed(2)}
+                - Resultado Esperado/Lan√ßado: R$ ${result.toFixed(2)}
+                - Descri√ß√£o: ${description}
 
-                ForneÁa uma an·lise de risco concisa (m·ximo 4 frases) em portuguÍs.
-                1. Destaque o percentual de risco (% do capital total investido nesta operaÁ„o).
-                2. Comente sobre o impacto desta exposiÁ„o no capital total.
-                3. Use um tom conservador (ex: "È um risco elevado", "abordagem sensata").
+                Forne√ßa uma an√°lise de risco concisa (m√°ximo 4 frases) em portugu√™s.
+                1. Destaque o percentual de risco (% do capital total investido nesta opera√ß√£o).
+                2. Comente sobre o impacto desta exposi√ß√£o no capital total.
+                3. Use um tom conservador (ex: "√© um risco elevado", "abordagem sensata").
             `;
             
             // 2. Configurar a chamada da API
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
                 systemInstruction: {
-                    parts: [{ text: "VocÍ È um analista financeiro conservador e conciso. Suas respostas devem ser limitadas a 4 frases, focadas em percentual de risco e preservaÁ„o de capital." }]
+                    parts: [{ text: "Voc√™ √© um analista financeiro conservador e conciso. Suas respostas devem ser limitadas a 4 frases, focadas em percentual de risco e preserva√ß√£o de capital." }]
                 },
             };
 
@@ -615,10 +615,10 @@
                     }
 
                     const resultJson = await response.json();
-                    const generatedText = resultJson.candidates?.[0]?.content?.parts?.[0]?.text || "Erro: N„o foi possÌvel obter a an·lise.";
+                    const generatedText = resultJson.candidates?.[0]?.content?.parts?.[0]?.text || "Erro: N√£o foi poss√≠vel obter a an√°lise.";
 
                     // 3. Exibir o resultado na UI
-                    outputDiv.innerHTML = `<p class="font-bold text-gray-800">An·lise LLM (Gemini):</p><p>${generatedText}</p>`;
+                    outputDiv.innerHTML = `<p class="font-bold text-gray-800">An√°lise LLM (Gemini):</p><p>${generatedText}</p>`;
                     outputDiv.classList.remove('hidden');
                     break; // Sai do loop se for bem-sucedido
 
@@ -628,18 +628,18 @@
                         // Implementa backoff exponencial
                         await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
                     } else {
-                        outputDiv.innerHTML = `<p class="text-red-600">? Erro na API Gemini: N„o foi possÌvel realizar a an·lise apÛs ${maxRetries} tentativas.</p>`;
+                        outputDiv.innerHTML = `<p class="text-red-600">? Erro na API Gemini: N√£o foi poss√≠vel realizar a an√°lise ap√≥s ${maxRetries} tentativas.</p>`;
                         outputDiv.classList.remove('hidden');
                     }
                 }
             }
             
-            // 4. Resetar o bot„o
+            // 4. Resetar o bot√£o
             analyzeButton.classList.remove('llm-loading');
-            analyzeButton.textContent = '? An·lise de Risco LLM';
+            analyzeButton.textContent = '? An√°lise de Risco LLM';
         };
 
-        // Atualiza as configuraÁıes de porcentagem no Firestore
+        // Atualiza as configura√ß√µes de porcentagem no Firestore
         window.updateSettings = async (settingKey, value) => {
             if (!isAuthReady) return;
 
@@ -651,18 +651,18 @@
                     [settingKey]: numericValue
                 });
             } catch (error) {
-                // Se o documento n„o existir, tenta criar
+                // Se o documento n√£o existir, tenta criar
                 if (error.code === 'not-found') {
                     await setDoc(trackerDocRef, {
                         initialBankroll: currentData.initialBankroll,
                         transactions: [],
                         [settingKey]: numericValue,
-                        // Garante que a outra configuraÁ„o tenha um valor
+                        // Garante que a outra configura√ß√£o tenha um valor
                         riskPercentage: settingKey === 'riskPercentage' ? numericValue : currentData.riskPercentage,
                         returnPercentage: settingKey === 'returnPercentage' ? numericValue : currentData.returnPercentage
                     });
                 } else {
-                    console.error(`Erro ao atualizar configuraÁ„o ${settingKey}:`, error);
+                    console.error(`Erro ao atualizar configura√ß√£o ${settingKey}:`, error);
                 }
             }
         };
@@ -680,7 +680,7 @@
                     initialBankroll: newBankroll
                 });
             } catch (error) {
-                // Se o documento n„o existir, tenta criar
+                // Se o documento n√£o existir, tenta criar
                 if (error.code === 'not-found') {
                     await setDoc(trackerDocRef, {
                         initialBankroll: newBankroll,
@@ -694,28 +694,28 @@
             }
         };
 
-        // Registra uma transaÁ„o autom·tica baseada na Unidade (VitÛria ou Derrota)
+        // Registra uma transa√ß√£o autom√°tica baseada na Unidade (Vit√≥ria ou Derrota)
         window.registerAutoTransaction = async (isWin) => {
             if (!isAuthReady) return;
             
             const initialInput = document.getElementById('initialBankrollInput');
             let bankrollToCheck = currentData.initialBankroll;
 
-            // FIX DE SINCRONIZA«√O: Se a banca em currentData for 0, usa o valor do input (caso o usu·rio tenha digitado r·pido)
+            // FIX DE SINCRONIZA√á√ÉO: Se a banca em currentData for 0, usa o valor do input (caso o usu√°rio tenha digitado r√°pido)
             if (bankrollToCheck <= 0) {
                 const uiBankroll = parseFloat(initialInput.value);
                 if (uiBankroll > 0) {
-                    // ForÁa a atualizaÁ„o do Firestore e da vari·vel local para esta execuÁ„o
+                    // For√ßa a atualiza√ß√£o do Firestore e da vari√°vel local para esta execu√ß√£o
                     await updateInitialBankroll(uiBankroll);
                     bankrollToCheck = uiBankroll;
-                    currentData.initialBankroll = uiBankroll; // Atualiza a vari·vel local imediatamente
+                    currentData.initialBankroll = uiBankroll; // Atualiza a vari√°vel local imediatamente
                 }
             }
             
             if (bankrollToCheck <= 0) {
-                console.error("Erro: Banca Inicial n„o definida. Por favor, defina a Banca Inicial primeiro.");
+                console.error("Erro: Banca Inicial n√£o definida. Por favor, defina a Banca Inicial primeiro.");
                 
-                // Feedback visual para o usu·rio
+                // Feedback visual para o usu√°rio
                 initialInput.classList.add('error-highlight');
                 setTimeout(() => {
                     initialInput.classList.remove('error-highlight');
@@ -732,7 +732,7 @@
             const bankrollForRisk = Math.max(0, currentBankroll); 
 
             if (bankrollForRisk <= 0) {
-                 console.warn("Banca atual zerada/negativa. N„o È possÌvel calcular nova Unidade de risco.");
+                 console.warn("Banca atual zerada/negativa. N√£o √© poss√≠vel calcular nova Unidade de risco.");
                  return;
             }
 
@@ -745,10 +745,10 @@
             let description = '';
 
             if (isWin) {
-                // VitÛria: Usa a Porcentagem de Retorno CUSTOMIZADA
+                // Vit√≥ria: Usa a Porcentagem de Retorno CUSTOMIZADA
                 const returnRatio = currentData.returnPercentage / 100;
                 result = unitStake * returnRatio;
-                description = `VitÛria (+${currentData.returnPercentage}%) - Unidade R$${unitStake.toFixed(2)}`;
+                description = `Vit√≥ria (+${currentData.returnPercentage}%) - Unidade R$${unitStake.toFixed(2)}`;
             } else {
                 // Derrota: -100% do valor de risco (Unidade)
                 result = -unitStake * 1.00;
@@ -769,16 +769,16 @@
             } catch (error) {
                  if (error.code === 'not-found') {
                     await setDoc(trackerDocRef, {
-                        ...currentData, // Inclui as configuraÁıes
+                        ...currentData, // Inclui as configura√ß√µes
                         transactions: [newTransaction]
                     });
                 } else {
-                    console.error("Erro ao adicionar transaÁ„o autom·tica:", error);
+                    console.error("Erro ao adicionar transa√ß√£o autom√°tica:", error);
                 }
             }
         };
 
-        // FunÁ„o para excluir uma transaÁ„o
+        // Fun√ß√£o para excluir uma transa√ß√£o
         window.deleteTransaction = async (timestamp, result, investedAmount) => {
             if (!isAuthReady) return;
 
@@ -789,7 +789,7 @@
             );
             
             if (!transactionToDelete) {
-                console.error("Erro: TransaÁ„o n„o encontrada para exclus„o.");
+                console.error("Erro: Transa√ß√£o n√£o encontrada para exclus√£o.");
                 return;
             }
 
@@ -797,14 +797,14 @@
                 await updateDoc(trackerDocRef, {
                     transactions: arrayRemove(transactionToDelete)
                 });
-                console.log("TransaÁ„o excluÌda com sucesso.");
+                console.log("Transa√ß√£o exclu√≠da com sucesso.");
             } catch (error) {
-                console.error("Erro ao excluir transaÁ„o:", error);
+                console.error("Erro ao excluir transa√ß√£o:", error);
             }
         };
 
 
-        // Adiciona uma nova transaÁ„o manual ao Firestore (Aportes/Outros)
+        // Adiciona uma nova transa√ß√£o manual ao Firestore (Aportes/Outros)
         document.getElementById('transactionForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!isAuthReady) return;
@@ -814,7 +814,7 @@
             const result = parseFloat(document.getElementById('result').value);
 
             if (isNaN(investedAmount) || isNaN(result)) {
-                console.error("Valores inv·lidos para investimento/resultado.");
+                console.error("Valores inv√°lidos para investimento/resultado.");
                 return;
             }
 
@@ -834,12 +834,12 @@
             } catch (error) {
                  if (error.code === 'not-found') {
                     await setDoc(trackerDocRef, {
-                        ...currentData, // Inclui as configuraÁıes
+                        ...currentData, // Inclui as configura√ß√µes
                         transactions: [newTransaction]
                     });
                     document.getElementById('transactionForm').reset();
                 } else {
-                    console.error("Erro ao adicionar transaÁ„o:", error);
+                    console.error("Erro ao adicionar transa√ß√£o:", error);
                 }
             }
         });
@@ -849,3 +849,4 @@
 
     </script>
 }
+
